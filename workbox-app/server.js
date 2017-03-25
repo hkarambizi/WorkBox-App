@@ -33,4 +33,20 @@ app.use('/users', userController);
 app.use('/contacts', contactController);
 app.use('/sessions', sessionController);
 
-app.listen(4000);
+// I assigned the variable 'db' to my database connection
+var db = mongoose.connection;
+
+// Will log an error if db can't connect to MongoDB
+db.on('error', function(err){
+  console.log(err);
+});
+
+// Will log "database has been connected" if it successfully connects.
+db.once('open', function() {
+  console.log("Yah bish! database has been connected!");
+});
+
+app.listen(4000, function(){
+  console.log("app listening on muh fuh port 3000");
+});
+

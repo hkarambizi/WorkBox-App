@@ -30,6 +30,7 @@ var UserSchema = new Schema({
   userLastName: String,
   email: String,
   password_digest: String,
+  contacts: [ContactSchema],
   created_at: Date,
   updated_at: Date
 });
