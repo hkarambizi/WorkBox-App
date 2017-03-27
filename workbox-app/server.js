@@ -7,9 +7,9 @@ var hbs = require('hbs')
 var mongoose = require('mongoose');
 pry = require('pryjs');
 
-var usersController = require('./controllers/userController.js');
+var userController = require('./controllers/userController.js');
 var contactController = require('./controllers/contactController.js')
-var sessionsController = require('./controllers/sessionController.js');
+var sessionController = require('./controllers/sessionController.js');
 var indexController = require('./controllers/indexController.js')
 var app = express();
 
@@ -55,5 +55,5 @@ db.on('disconnected', function() {
   console.log('Mongoose disconnected');
 });
 app.listen(4000, function(){
-  console.log("app listening on muh fuh port 3000");
+  console.log("app listening on muh fuh port 4000");
 });

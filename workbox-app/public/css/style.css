@@ -72,6 +72,10 @@ main {
 	border-bottom: 1px solid #B9D6C2;
 }
 
+.img-icon {
+	width: 20px;
+	height: 20px;
+}
 /*#buy {
 	width: 100px;
 	height: 50px;
