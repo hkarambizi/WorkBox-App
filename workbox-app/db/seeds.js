@@ -1,9 +1,10 @@
 //This code below allows us to assign a common variable as the cloud and on a local level we can assign it in our .env file
 require('dotenv').config()
+var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI);
 
 //We import and assign the 'models' from our schema file to variables in order to create instances below
-var Model = require('../models/user');
+var User = require('../models/user');
 var Contact = require('../models/contact');
 
 // Use native promises
@@ -27,9 +28,7 @@ var testUser = new User({
   userFirstName: 'Sam',
   userLastName: "Winchester",
   email: "agentscully@aol.com",
-  password_digest: 'paloAltoDropout',
-  created_at: Date,
-  updated_at: Date
+  password_digest: 'paloAltoDropout'
 });
 
 // Then, we create an example Contact instances!

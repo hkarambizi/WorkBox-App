@@ -5,13 +5,13 @@ mongoose.Promise = global.Promise;
 
 //
 var ContactSchema = new Schema({
-    firstName: req.body.first_name,
-    lastName: req.body.last_name,
-    title: req.body.title,
-    company: req.body.company,
-    phone: req.body.phone,
-    email: req.body.email,
-    notes: req.body.notes,
+    firstName: String,
+    lastName: String,
+    title: String,
+    company: String,
+    phone: Number,
+    email: String,
+    notes: String,
   });
 
 //
