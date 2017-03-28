@@ -56,6 +56,5 @@ db.on('error', function(err) {
 db.on('disconnected', function() {
   console.log('Mongoose disconnected');
 });
-app.listen(4000, function(){
-  console.log("app listening on muh fuh port 4000");
-});
+
+module.exports = app;
