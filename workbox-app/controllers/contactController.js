@@ -51,8 +51,9 @@ router.get('/:id', function(req, res){
 // and upon success redirects back to the index page "/"
 router.post('/', function(req, res){
   var contact = new Contact({
-    firstName: req.body.first_name,
-    lastName: req.body.last_name,
+    img: req.body.img,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     title: req.body.title,
     company: req.body.company,
     phone: req.body.phone,
@@ -63,7 +64,7 @@ router.post('/', function(req, res){
     if (err) { console.log(err); }
     console.log(contact);
     res.send(contact);
-    res.redirect('/contacts');
+    res.redirect('users/:id/');
   });
 });
 
@@ -93,16 +94,17 @@ router.get('/:id/edit', function(req, res){
 // redirects back to the SHOW PAGE (not index)
 router.put('/:id', function(req, res){
   Contact.findByIdAndUpdate(req.params.id, {
+    title: req.body.title,
+    company: req.body.company,
+    email: req.body.email,
+    phone: req.body.phone,
     notes: req.body.notes,
-    img: req.body.img,
-    linkedIn: req.body.linked_in
+    img: req.body.img
   }, { new: true })
   .exec(function(err, contact){
     if (err) { console.log(err); }
     console.log(contact);
-    res.render('contacts/show.hbs', {
-      contact: contact
-    });
+    res.redirect('/users/:userId/contacts/:id');
   });
 });
 

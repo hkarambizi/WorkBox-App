@@ -1,0 +1,44 @@
+<!-- placeholder contact img = https://cdn0.iconfinder.com/data/icons/simple-outlines-1/100/User_2-512.png  -->
+<h1>Add Contact</h1>
+<div id="add-contact-form">
+	<form action="/{{user.id}}/contacts" method="POST">
+	   <div id="add-contact-image">
+	   <img src="https://cdn0.iconfinder.com/data/icons/simple-outlines-1/100/User_2-512.png"/>
+	   <div>
+	    <label for="img">Copy + Paste Image url to add Image:</label>
+	    <input type="text" name="img">
+	  </div>
+	  	</div>
+	  <div>
+	    <label for="firstName">First Name:</label>
+	    <input type="text" name="firstName">
+	  </div>
+	   <div>
+	    <label for="lastName">Last Name:</label>
+	    <input type="text" name="lastName">
+	  </div>
+	   <div>
+	    <label for="title">Job Title:</label>
+	    <input type="text" name="title">
+	  </div>
+	   <div>
+	    <label for="company">Company:</label>
+	    <input type="text" name="company">
+	  </div>
+	   <div>
+	    <label for="email">Email:</label>
+	    <input type="text" name="email">
+	     <div>
+	    <label for="phone">Phone Number:</label>
+	    <input type="text" name="phone">
+	  </div> 
+	<div>
+	    <label for="notes">Enter Contact Notes:</label>
+	    <input type="text" name="notes">
+	  </div> 
+	  <div>
+	    <input type="submit" value="Add a New Contact">
+	  </div>
+	</form>
+		<button><a href="/users/{{user.id}}">Cancel</a></button>
+</div>
