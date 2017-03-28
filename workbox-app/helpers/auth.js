@@ -1,4 +1,4 @@
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcrypt-nodejs');
 var User = require('../models/user.js');
 
 function createSecure(req, res, next) {
@@ -32,8 +32,8 @@ function loginUser(req, res, next) {
 function authorize(req, res, next) {
   var currentUser = req.session.currentUser;
 
-  if (!currentUser || currentUser._id !== req.params.id ) {
-    res.json({status: 401, data: 'unauthorized'});
+  if (!currentUser || currentUser._id !== req.params.userId ) {
+    res.json({status: 404, data: 'unauthorized'});
   } else {
     next();
   }
