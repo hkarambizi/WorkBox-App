@@ -11,6 +11,7 @@ var ContactSchema = new Schema({
     company: String,
     phone: Number,
     email: String,
+    img: String,
     notes: String,
   });
 
