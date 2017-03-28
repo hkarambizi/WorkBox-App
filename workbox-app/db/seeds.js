@@ -44,20 +44,31 @@ var bobby = new Contact({
   });
 
 
-// save the test User instance
-testUser.save(function(err) {
-  if (err) console.log(err);
-  console.log('Test User created!');
+// // save the test User instance
+// testUser.save(function(err) {
+//   if (err) console.log(err);
+//   console.log('Test User created!');
+// });
+
+
+
+// // save the contact instances
+// bobby.save(function(err) {
+//   if (err) console.log(err);
+//   console.log('Contact created!');
+// });
+
+var users = [testUser];
+var contacts = [bobby];
+
+users.forEach(function(user, i){
+  user.contacts.push(contacts[i]);
+//YOU MUST use .save to save the students to db. Always use an error function with save.
+  user.save(function(err) {
+    if(err) { console.log(err); }
+    
+   console.log('User with Contact created!');
 });
-
-
-
-// save the contact instances
-bobby.save(function(err) {
-  if (err) console.log(err);
-  console.log('Contact created!');
 });
-
-
 
 

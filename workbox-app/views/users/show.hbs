@@ -5,7 +5,7 @@
 			<h3 id="user-stats">You have {{contact.length}} contacts! </h3>
 
 				<button><a href="/users/{{user.id}}/new">Add Contact</a></button>
-				
+
 				<ul>
 				{{#each contact}}
 				    <li>Name: {{this.firstName}} {{this.lastName}}</li>
@@ -14,7 +14,7 @@
 				    <li>Email: {{this.email}}</li>
 				    <li>Phone Number: {{this.phone}}</li>
 				    <li>Notes: {{this.notes}}</li>
-    				<li><button class="btn btn-primary"><a href="/users/{{user.id}}/contacts/{{@index}}/edit">Edit</a></button></li>
+    				<li><button class="btn btn-primary"><a href="/users/{{../user.id}}/contacts/{{this.id}}/edit">Edit</a></button></li>
 				{{/each}}
 					</ul>
 		

@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(logger('dev'));
 app.use(methodOverride('_method'));
+app.use(express.static("public"));
 
 app.use(session({
   secret: "derpderpderpcats",
@@ -32,7 +33,7 @@ app.use(session({
 
 app.use('/', indexController);
 app.use('/users', userController);
-app.use('/contacts', contactController);
+app.use('/users/:userId/contacts', contactController);
 app.use('/sessions', sessionController);
 
 // I assigned the variable 'db' to my database connection

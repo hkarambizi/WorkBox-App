@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router({mergeParams: true});
 var Contact = require("../models/contact");
+var User = require("../models/user")
 
 //======================
 // INDEX
@@ -32,12 +33,15 @@ router.get('/new', function(req, res){
 //======================
 // Create a GET show route "/:id" that renders the contact's show page
 router.get('/:id', function(req, res){
-  Contact.findById(req.params.id)
-  .exec(function(err, contact) {
+  User.findById(req.params.userId)
+  // User.find()
+  .exec(function(err, user) {
     if (err) console.log(err);
-    console.log(contact);
+    console.log(user);
+    var contact = user.contacts.id(req.params.id);
     res.render('contacts/show.hbs', {
-      contact: contact
+      contact: contact,
+      user: user
     });
   });
 });
@@ -76,12 +80,14 @@ router.post('/', function(req, res){
 // Create a GET edit route "/:id/edit" that renders the edit.hbs page and
 // sends that contact's data to it
 router.get('/:id/edit', function(req, res){
-  Contact.findById(req.params.id)
-  .exec(function(err, contact) {
+  User.findById(req.params.userId)
+  .exec(function(err, user) {
     if (err) console.log(err);
-    console.log(contact);
+    console.log(user);
+    var contact = user.contacts.id(req.params.id);
     res.render('contacts/edit.hbs', {
-      contact: contact
+      contact: contact,
+      user: user
     });
   });
 });
@@ -93,13 +99,14 @@ router.get('/:id/edit', function(req, res){
 // Create a PUT update route "/:id" that updates the contact and
 // redirects back to the SHOW PAGE (not index)
 router.put('/:id', function(req, res){
-  Contact.findByIdAndUpdate(req.params.id, {
-    title: req.body.title,
-    company: req.body.company,
-    email: req.body.email,
-    phone: req.body.phone,
-    notes: req.body.notes,
-    img: req.body.img
+  User.findByIdAndUpdate(req.params.userId, {
+    contacts: [
+      {title: req.body.title,
+      company: req.body.company,
+      email: req.body.email,
+      phone: req.body.phone,
+      notes: req.body.notes,
+      img: req.body.img}]
   }, { new: true })
   .exec(function(err, contact){
     if (err) { console.log(err); }
@@ -115,7 +122,7 @@ router.put('/:id', function(req, res){
 // Create a DELETE delete route "/:id" that deletes the contact and
 // redirects back to index page "/"
 router.delete('/:id', function(req, res){
-  Contact.findByIdAndRemove(req.params.id)
+  User.findById(req.params.id)
   .exec(function(err, contact) {
     if (err) console.log(err);
     console.log('Contact deleted!');

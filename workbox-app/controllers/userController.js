@@ -14,11 +14,12 @@ router.post('/', authHelpers.createSecure, function(req, res){
 // SHOW
 //======================
 // Create a GET show route "/:id" that renders the user's profile page
-router.get('/:id', function(req, res){
-  User.findById(req.params.id)
+router.get('/:userId', function(req, res){
+  User.findById(req.params.userId)
   .exec(function(err, user) {
     if (err) console.log(err);
     console.log(user);
+    if (!user) {console.log("didn't find user");}
     res.render('users/show.hbs', {
       user: user,
       contact: user.contacts
