@@ -1,0 +1,22 @@
+<form method="POST" action="/sessions?_method=DELETE"><button class="btn btn-danger">Log Out</button></form>
+
+<h1>Welcome: {{user.userFirstName}}</h1>
+
+		<div class="user-container-show">
+
+			<h3 id="user-stats">You have {{contact.length}} contacts! </h3>
+
+				<button><a href="/users/{{user.id}}/contacts/new">Add Contact</a></button>
+
+				<ul>
+				{{#each contact}}
+				    <li><h3>Name: <a href="/users/{{../user.id}}/contacts/{{this.id}}">{{this.firstName}} {{this.lastName}}</a></h3></li>
+				    <li>Title: {{this.title}}</li>
+				    <li>Company: {{this.company}}</li>
+				    <li>Email: {{this.email}}</li>
+				    <li>Phone Number: {{this.phone}}</li>
+				    <li>Notes: {{this.notes}}</li>
+    				<li><button class="btn btn-primary"><a href="/users/{{../user.id}}/contacts/{{this.id}}/edit">Edit</a></button></li>
+				{{/each}}
+					</ul>
+		

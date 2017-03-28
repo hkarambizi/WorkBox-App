@@ -1,0 +1,27 @@
+<div>
+	<a href="site-map.html" onclick="history.go(-1)">Back</a>
+</div>
+
+<form method="POST" action="/sessions?_method=DELETE"><button class="btn btn-danger">Log Out</button></form>
+
+
+<h1>{{contact.firstName}} {{contact.lastName}} Details</h1>
+<!-- In 'contacts/show.hbs' view, setup the container <div>, with a contact profile image <div>, and the contact's info <div>, 'edit' <button>, and 'delete' button -->
+	<div id="contact-card">
+		<div id="contact-img"><img src="{{contact.img}}"/></div>
+		<ul>
+			<li><h2>{{contact.firstName}} {{contact.lastName}}</h2></li>
+			<li>{{contact.title}}</li>
+			<li>{{contact.company}}</li>
+			<li>{{contact.email}}</li>
+			<li>{{contact.phone}}</li>
+			</ul>
+		<button><a href="/users/{{user.id}}/contacts/{{contact.id}}/edit">Edit</a></button>
+		<button><a href="/users/{{user.id}}">Cancel</a></button>
+	</div>
+	<br>
+	<div id="contact-notes">
+		<h3>Notes:</h3>
+		<p>{{contact.notes}}</p>
+
+	</div>
