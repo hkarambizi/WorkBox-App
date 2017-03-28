@@ -1,34 +1,42 @@
+<div>
+	<a href="site-map.html" onclick="history.go(-1)">Back</a>
+</div>
+
 <h1>Edit Contact</h1>
 <div id="edit-contact-form">
-	<form action="/{{user.id}}/contacts/{{contact.id}}?_method=PUT" method="POST">
+	<form action="/users/{{user.id}}/contacts/{{contact.id}}?_method=PUT" method="POST">
 	   <div id="add-contact-image">
 	   <div>
 	    <label for="img">Copy + Paste Image url to Update Image:</label>
-	    <input type="text" name="img">
+	    <input type="text" name="img" value="{{contact.img}}">
 	  </div>
 	  	</div>
 	   <div>
 	    <label for="title">Job Title:</label>
-	    <input type="text" name="title">
+	    <input type="text" name="title" value="{{contact.title}}">
 	  </div>
 	   <div>
 	    <label for="company">Company:</label>
-	    <input type="text" name="company">
+	    <input type="text" name="company" value="{{contact.company}}">
 	  </div>
 	   <div>
 	    <label for="email">Email:</label>
-	    <input type="text" name="email">
+	    <input type="text" name="email" value="{{contact.email}}">
 	     <div>
 	    <label for="phone">Phone Number:</label>
-	    <input type="text" name="phone">
+	    <input type="text" name="phone" value="{{contact.phone}}">
 	  </div> 
 	<div>
 	    <label for="notes">Update Contact Notes:</label>
-	    <input type="text" name="notes">
+	    <input type="text" name="notes" value="{{contact.notes}}">
 	  </div> 
 	  <div>
 	    <input type="submit" value="Update Contact">
 	  </div>
-	</form>
+	  </form>
+	  
+	  <form method="POST" action="/users/{{user.id}}/contacts/{{contact.id}}?_method=DELETE">
+		 <button type="submit" value="DELETE" class="btn btn-danger" />Delete Contact</button>
+		</form>
 		<button><a href="/users/{{user.id}}">Cancel</a></button>
 </div>

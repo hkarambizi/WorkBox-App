@@ -1,7 +1,11 @@
 <!-- placeholder contact img = https://cdn0.iconfinder.com/data/icons/simple-outlines-1/100/User_2-512.png  -->
+<div>
+	<a href="site-map.html" onclick="history.go(-1)">Back</a>
+</div>
+
 <h1>Add Contact</h1>
 <div id="add-contact-form">
-	<form action="/{{user.id}}/contacts" method="POST">
+	<form action="/users/{{user.id}}/contacts" method="POST">
 	   <div id="add-contact-image">
 	   <img src="https://cdn0.iconfinder.com/data/icons/simple-outlines-1/100/User_2-512.png"/>
 	   <div>

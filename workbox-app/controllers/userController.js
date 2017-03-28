@@ -16,7 +16,7 @@ router.post('/', authHelpers.createSecure, function(req, res){
 // Create a GET show route "/:id" that renders the user's profile page
 router.get('/:userId', function(req, res){
   User.findById(req.params.userId)
-  .exec(function(err, user) {
+  .exec(function(err, user, contacts) {
     if (err) console.log(err);
     console.log(user);
     if (!user) {console.log("didn't find user");}

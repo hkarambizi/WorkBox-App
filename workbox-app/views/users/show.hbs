@@ -4,11 +4,11 @@
 
 			<h3 id="user-stats">You have {{contact.length}} contacts! </h3>
 
-				<button><a href="/users/{{user.id}}/new">Add Contact</a></button>
+				<button><a href="/users/{{user.id}}/contacts/new">Add Contact</a></button>
 
 				<ul>
 				{{#each contact}}
-				    <li>Name: {{this.firstName}} {{this.lastName}}</li>
+				    <li><h3>Name: <a href="/users/{{../user.id}}/contacts/{{this.id}}">{{this.firstName}} {{this.lastName}}</a></h3></li>
 				    <li>Title: {{this.title}}</li>
 				    <li>Company: {{this.company}}</li>
 				    <li>Email: {{this.email}}</li>
