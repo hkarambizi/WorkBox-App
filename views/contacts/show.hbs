@@ -1,100 +1,63 @@
+<div class="text-center">
 <div>
 	<a href="site-map.html" onclick="history.go(-1)">Back</a>
 </div>
 
 <form method="POST" action="/sessions?_method=DELETE"><button class="btn btn-danger">Log Out</button></form>
+</div>
 
-
-<h1>{{contact.firstName}} {{contact.lastName}} Details</h1>
-<!-- In 'contacts/show.hbs' view, setup the container <div>, with a contact profile image <div>, and the contact's info <div>, 'edit' <button>, and 'delete' button -->
-	<div id="contact-card">
-		<div id="contact-img"><img src="{{contact.img}}"/></div>
-		<ul>
-			<li><h2>{{contact.firstName}} {{contact.lastName}}</h2></li>
-			<li>{{contact.title}}</li>
-			<li>{{contact.company}}</li>
-			<li>{{contact.email}}</li>
-			<li>{{contact.phone}}</li>
-			</ul>
-		<button><a href="/users/{{user.id}}/contacts/{{contact.id}}/edit">Edit</a></button>
-		<button><a href="/users/{{user.id}}">Cancel</a></button>
-	</div>
-	<br>
-	<div id="contact-notes">
-		<h3>Notes:</h3>
-		<p>{{contact.notes}}</p>
-
-	</div>
-
-	<!--BEGINNING CONTACT PROFILE VIEW-->
-<!--            <div class="container">-->
-<!--    <div class="row">-->
-<!--        <div class=" col-lg-offset-3 col-lg-6">-->
-<!--            <div class="panel panel-default">-->
-<!--                <div class="panel-body">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-lg-12">-->
-<!--                            <div class="row">-->
-<!--                                <div class="col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">-->
-<!--                                    <img class="img-circle img-responsive" src="http://api.adorable.io/avatars/300/abott@adorable.png">-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-lg-12">-->
-<!--                            <div class="row">-->
-<!--                                <div class="centered-text col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">-->
-<!--                                    <div itemscope="" itemtype="http://schema.org/Person">-->
-<!--                                        <h2> <span itemprop="name">Your Name</span></h2>-->
-<!--                                        <p itemprop="jobTitle">Your Position</p>-->
-<!--                                        <p><span itemprop="affiliation">Your Company</span></p>-->
-<!--                                        <p>-->
-<!--                                            <i class="fa fa-map-marker"></i> <span itemprop="addressRegion">Your City, Your State</span>-->
-<!--                                        </p>-->
-<!--                                        <p itemprop="email"> <i class="fa fa-envelope"> </i> <a href="mailto:you@somedomain.com">you@somedomain.com</a> </p>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-lg-12 centered-text">-->
-<!--                            Your Short Bio goes here.-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="panel-footer">-->
-<!--                    <div class="row">-->
-<!--                        <div id="social-links" class=" col-lg-12">-->
-<!--                            <div class="row">-->
-<!--                                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-3 social-btn-holder">-->
-<!--                                    <a title="google" class="btn btn-social btn-block btn-google" target="_BLANK" href="http://plus.google.com/+You/">-->
-<!--                                        <i class="fa fa-google"></i> +You-->
-<!--                                    </a>-->
-<!--                                </div>-->
-<!--                                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-3 social-btn-holder">-->
-<!--                                    <a title="twitter" class="btn btn-social btn-block btn-twitter" target="_BLANK" href="http://twitter.com/yourid">-->
-<!--                                        <i class="fa fa-twitter"></i> /yourid-->
-<!--                                    </a>-->
-<!--                                </div>-->
-<!--                                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-3 social-btn-holder">-->
-<!--                                    <a title="github" class="btn btn-social btn-block btn-github" target="_BLANK" href="http://github.com/yourid">-->
-<!--                                        <i class="fa fa-github"></i> /yourid-->
-<!--                                    </a>-->
-<!--                                </div>-->
-<!--                                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-3 social-btn-holder">-->
-<!--                                    <a title="stackoverflow" class="btn btn-social btn-block btn-stackoverflow" target="_BLANK" href="http://stackoverflow.com/users/youruserid/yourid">-->
-<!--                                        <i class="fa fa-stack-overflow"></i> /yourid-->
-<!--                                    </a>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
-
-<!--END OF CONTACT PROFILE VIEW-->
-    
+<div class="container">
+    <div class="row">
+        <div class=" col-lg-offset-3 col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+                                    <img class="img-circle img-responsive" src="{{contact.img}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="centered-text col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+                                    <div itemscope="" itemtype="http://schema.org/Person">
+                                        <h2> <span itemprop="name">{{contact.firstName}} {{contact.lastName}}</span></h2>
+                                        <p itemprop="jobTitle">{{contact.title}}</p>
+                                        <p><span itemprop="affiliation">{{contact.company}}</span></p>
+                                        <p><span itemprop="phone">{{contact.phone}}</span>
+                                        </p>
+                                        <p itemprop="email"> <i class="fa fa-envelope"> </i> <a href="mailto:{{contact.email}}">{{contact.email}}</a> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 centered-text">
+                        <p>NOTES:</p>
+                            {{contact.notes}}
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div id="social-links" class=" col-lg-12">
+                            <div class="row">
+                                
+                                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-3 social-btn-holder">
+                                    <button><a href="/users/{{user.id}}/contacts/{{contact.id}}/edit">Edit</a></button>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-3 social-btn-holder">
+                                    <button><a href="/users/{{user.id}}">Cancel</a></button>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

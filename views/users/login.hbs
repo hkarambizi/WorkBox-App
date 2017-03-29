@@ -1,47 +1,23 @@
-<h1>Login</h1>
-<form action="/sessions/login" method="post">
-  <div>
-    <label for="email">email</label>
-    <input type="text" name="email">
-  </div>
-  <div>
-    <label for="password">password</label>
-    <input type="password" name="password">
-  </div>
-  <input type="submit" value="Submit">
-</form>
-<div>
-<a href="/users/signup" class="btn btn-default">Not A User? Sign Up Here</a>
-<a href="/" class="btn btn-danger">Return Home</a>
-</div>
+    <div class="background-container">
+        <div class="card card-container">
+        <h2 class='login_title text-center'>Login</h2>
+        <p class="text-center">Enter your credentials below:</p>
+        <hr>
 
-<!--START LOGIN VIEW CODE-->
+            <form action="/sessions/login" method="post" class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <p class="input_title">Email</p>
+                <input type="text" name="email" id="inputEmail" class="login_box" placeholder="email address" required autofocus>
+                <p class="input_title">Password</p>
+                <input type="password" name="password" id="inputPassword" class="login_box" placeholder="******" required>
+                <div id="remember" class="checkbox">
+                </div>
+                <button class="btn btn-lg btn-primary" type="submit">Login</button>
+                <br>
+         <div class="text-center">
+		<a href="/users/signup" class="btn btn-success">Not A User? Sign Up?</a>
+		</div>
+           </form>
+       </div>/<!-- card-container -->
+   </div>
     
-    <!--<script src="https://use.typekit.net/ayg4pcz.js"></script>-->
-    <!--<script>try{Typekit.load({ async: true });}catch(e){}</script>-->
-
-    <!--<div class="container">-->
-    <!--<h1 class="welcome text-center">Welcome Back!</h1>-->
-    <!--<br>-->
-    <!--    <div class="card card-container">-->
-    <!--    <h2 class='login_title text-center'>Login</h2>-->
-    <!--    <p class="text-center">Enter your credentials below:</p>-->
-    <!--    <hr>-->
-
-    <!--        <form class="form-signin">-->
-    <!--            <span id="reauth-email" class="reauth-email"></span>-->
-    <!--            <p class="input_title">Email</p>-->
-    <!--            <input type="text" id="inputEmail" class="login_box" placeholder="email address" required autofocus>-->
-    <!--            <p class="input_title">Password</p>-->
-    <!--            <input type="password" id="inputPassword" class="login_box" placeholder="******" required>-->
-    <!--            <div id="remember" class="checkbox">-->
-    <!--                <label>-->
-                        
-    <!--                </label>-->
-    <!--            </div>-->
-    <!--            <button class="btn btn-lg btn-primary" type="submit">Login</button>-->
-    <!--        </form><!-- /form -->
-    <!--    </div><!-- /card-container -->
-    <!--</div><!-- /container -->
-    
-   <!--END LOGIN VIEW CODE-->
