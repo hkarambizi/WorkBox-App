@@ -3,6 +3,8 @@ This repo is for a CRUD MEN app for a job search toolbox with a Business Card/Co
 
 App Deployment Link: https://fathomless-everglades-54260.herokuapp.com/
 
+This project has been added to Web Development Portfolio: http://harrykarambizi.bitballoon.com/
+
 ## Relationship Diagram w/ Data Models:
 I have included in this folder a diagram from LucidChart that depicts:
 -the flow of the user stories.
@@ -42,3 +44,5 @@ The Minimum Viable Product for this app can be used as such:
 * NodeJs
 * MongoDB
 * Heroku
+
+
