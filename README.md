@@ -3,7 +3,7 @@ This repo is for a CRUD MEN app for a job search toolbox with a Business Card/Co
 
 App Deployment Link: https://fathomless-everglades-54260.herokuapp.com/
 
-This project has been added to Web Development Portfolio: http://harrykarambizi.bitballoon.com/
+This project has been added to Web Development Portfolio: [Portfolio Site](http://harrykarambizi.bitballoon.com/)
 
 ## Relationship Diagram w/ Data Models:
 I have included in this folder a diagram from LucidChart that depicts:
@@ -11,7 +11,7 @@ I have included in this folder a diagram from LucidChart that depicts:
 -the data models used for this app.
 -The relationships between these two models.
 
-(https://github.com/hkarambizi/WorkBox-App/blob/master/WorkBox-App-ERD.pdf)
+![LucidChart ERD](https://github.com/hkarambizi/WorkBox-App/blob/master/WorkBox-App-ERD.pdf)
 
 
 ## Trello Board:
