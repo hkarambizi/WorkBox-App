@@ -20,7 +20,7 @@ Link to Trello: https://trello.com/b/0rcEqQ0c/workbox-app-wdi-9-project-2
 I created a functional wireframe using Mockingbird. 
 Link to wireframe: https://gomockingbird.com/projects/jjduttt
 
-#Basic MVP Usage:
+## Basic MVP Usage:
 The Minimum Viable Product for this app can be used as such:
 * Sign Up for a WorkBox account.
 * Log In to see your profile.
