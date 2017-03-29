@@ -54,5 +54,26 @@ router.get('/:userId/edit', function(req, res) {
  });
 });
 
+//GET ROUTE to render the delete User view
+router.get('/:userId/delete', function(req, res) {
+  User.findById(req.params.userId)
+  .exec(function(err, user, contact){
+   if (err) console.log(err);
+   res.render('users/delete.hbs', {
+     user: user,
+     contact: user.contacts
+   });
+ });
+});
+
+//delete user profile
+router.delete('/:userId', authHelpers.authorize, function(req, res) {
+  User.findById(req.params.userId)
+  .exec(function(err, user, contact) {
+   if (err) console.log(err);
+  user.remove();
+  res.redirect('/');
+  });
+});
 
 module.exports = router;

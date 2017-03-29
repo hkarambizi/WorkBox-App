@@ -18,14 +18,14 @@ function loginUser(req, res, next) {
   query.then(function(foundUser){
     if (foundUser == null) {
       res.json({status: 401, data: "unauthorized"})
-
-    } else if (bcrypt.compareSync(password, foundUser.password_digest)) {
+    
       req.session.currentUser = foundUser;
     }
     next()
   })
   .catch(function(err){
     res.json({status: 500, data: err})
+  
   });
 }
 
